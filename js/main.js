@@ -2,6 +2,8 @@ function postit(header,priority){
 
     post = Object();
 
+    post.type = "postit"
+
     post.name = header,
     post.labels = [],
     post.priority = priority,
@@ -19,6 +21,8 @@ function swimlane(name,meta) {
     
     
     lane = Object();
+    
+    lane.type = "swimlane"
     
     lane.name = name,
     lane.children = []
@@ -67,16 +71,21 @@ board.addSwimlane(lane);
 console.log(board);
 
 
-function renderItem(item,type,parent){
+
+
+// Look at creating an interface to access the board, opposed to accessing the board directly in rendering.
+// Use methods like GetSwimLanes, and GetPostIts opposed to accessing board items directly through enumerations.
+// Abstract it through another function.
+
+function renderItem(item,parent){
     
-    switch (t) { 
+    switch (item.type) { 
         
         case "postit":
-            "<div class=\"postit\"><h1>{0}</h1> {1}"
-            
+            renderPostIt(item, parent);
             
         case "swimlane":
-        
+        renderSwimLane(item, parent)
         
     }
     
