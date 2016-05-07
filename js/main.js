@@ -67,6 +67,21 @@ board.addSwimlane(lane);
 console.log(board);
 
 
+function renderItem(item,type,parent){
+    
+    switch (t) { 
+        
+        case "postit":
+            "<div class=\"postit\"><h1>{0}</h1> {1}"
+            
+            
+        case "swimlane":
+        
+        
+    }
+    
+}
+
 
 
 var swimlaneCount = 0;
