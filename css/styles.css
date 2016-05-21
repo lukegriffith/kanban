@@ -18,3 +18,13 @@
 #hidden {
     display: hidden
 }
+
+.postit {
+    
+    
+    border: solid;
+    padding: 5px, 5px, 5px, 5px;
+    
+}
+
+
