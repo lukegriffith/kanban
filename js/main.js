@@ -69,18 +69,22 @@ function renderBoard(board){
 
 function renderSwimlane(obj) { 
     
-    var div;
-    var header; 
-    var child;
-    var i;
+    var div, body, header, child, i;
     
     div = document.createElement("div");
-    header = document.createElement("h1");
+    header = document.createElement("div");
+    
+    header.className = "panel-heading";
     
     header.innerText = obj.name;
-    div.className = "swimlane";
+    div.className = "swimlane panel panel-default";
     
     div.appendChild(header);
+    
+    body = document.createElement("div");
+    
+    body.className = "panel-body"
+    
     
     //console.log("Starting Postits");
     
@@ -94,9 +98,11 @@ function renderSwimlane(obj) {
             //console.log(i);
             
             child = renderPostIt(obj.children[i])
-            div.appendChild(child);
+            body.appendChild(child);
         }
     }
+    
+    div.appendChild(body);
     
     return div;
     
@@ -104,20 +110,19 @@ function renderSwimlane(obj) {
 
 function renderPostIt(obj) {
     
-    var div;
-    var header;
+    var div, header, anchor;
     
     //console.log("renderPostIT");
     //console.log(obj);
     
-    
+    anchor = document.createElement("a")
     div = document.createElement("div");
     div.className = "postit";
     header = document.createElement("h1");
     header.innerHTML = obj.header;
     div.appendChild(header);
-    
-    return div
+    anchor.appendChild(div);
+    return anchor;
     
     
 }
@@ -166,12 +171,20 @@ lane.addChild(post);
 console.log("adding to board");
 board.addSwimlane(lane);
 // 
- lane = swimlane("next");
+ lane = swimlane("In Progress");
+ lane.addChild(post);
+ lane.addChild(post);
+ 
+// 
+ board.addSwimlane(lane);
+ 
+ lane = swimlane("Finished");
  lane.addChild(post);
  lane.addChild(post);
  lane.addChild(post);
 // 
  board.addSwimlane(lane);
+ 
  
 // 
 // console.log(board);

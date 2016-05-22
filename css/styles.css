@@ -1,19 +1,13 @@
 
 
-#container {
-    
-   
-    width: 700x;
-    
-    
-}
 .swimlane {
 
     border: dashed;
     display: table-cell;
-    vertical-align: middle;
-    height: 50px;
+    vertical-align: top;
+    height: 400px;
     
+   
 }
 #hidden {
     display: hidden
@@ -27,4 +21,23 @@
     
 }
 
+.postit a {
+    
+    text-decoration: none;
+    
+}
 
+.postit {
+    background: lime;
+}
+
+.postit h1 {
+    
+    color: black;
+}
+
+.SLHeader {
+    
+    color: blue;
+    vertical-align: top;
+}
