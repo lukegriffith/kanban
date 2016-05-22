@@ -1,3 +1,13 @@
+/*
+TODO:
+    Look at splitting issues out into its own array.
+    Have swimlanes look this array up to determine what lane its in.
+    This should allow for easier map / reduce behaviour on picking an issue for editing. 
+
+
+
+*/
+
 function postit(header,priority){
 
     post = Object();
